@@ -40,9 +40,6 @@ static/
 Thumbs.db
 ehthumbs.db
 
-# CapRover definition file
-captain-definition
-
 # Pipenv and Poetry
 Pipfile.lock
 poetry.lock
