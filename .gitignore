@@ -1,0 +1,51 @@
+# Python Bytecode
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual Environment
+.venv/
+env/
+venv/
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+db.sqlite3
+media/
+static/
+
+# Backup files
+*.bak
+*.swp
+*.swo
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# CapRover definition file
+captain-definition
+
+# Pipenv and Poetry
+Pipfile.lock
+poetry.lock
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# System Files
+*.log
