@@ -1,5 +1,5 @@
 # Use the official Python image from the Docker Hub
-FROM python:3.11-slim
+FROM python:3.11-buster
 
 # Set environment variables to prevent Python from writing .pyc files
 # and to ensure that output is sent straight to the terminal (i.e. not buffered)
