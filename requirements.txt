@@ -29,7 +29,7 @@ optree==0.13.1
 packaging==24.2
 pandas==2.2.3
 protobuf==5.29.1
-psycopg2==2.9.10
+# psycopg2==2.9.10
 psycopg2-binary==2.9.10
 Pygments==2.18.0
 python-dateutil==2.9.0.post0
