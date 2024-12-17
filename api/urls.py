@@ -1,5 +1,5 @@
 from django.urls import path
-from api.views import SensorList, SensorEnergyPrediction
+from api.views import CheckPredictionLock, SensorList, SensorEnergyPrediction
 
 app_name = "api"
 
@@ -9,5 +9,10 @@ urlpatterns = [
         "sensors/energy_prediction/",
         SensorEnergyPrediction.as_view(),
         name="sensor-energy-prediction",
+    ),
+    path(
+        "sensors/prediction_status/",
+        CheckPredictionLock.as_view(),
+        name="prediction-status",
     ),
 ]
