@@ -24,7 +24,7 @@ services:
     depends_on:
       - db
     env_file:
-      - .env.prod
+      - .env
 
 volumes:
   postgres_data:
