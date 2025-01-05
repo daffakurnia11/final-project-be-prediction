@@ -91,12 +91,20 @@ WSGI_APPLICATION = "final_project_prediction.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": env("DB_NAME"),
-        "USER": env("DB_USER"),
-        "PASSWORD": env("DB_PASSWORD"),
-        "HOST": env("DB_HOST"),
-        "PORT": env("DB_PORT"),
+        "NAME": "db-finalproject",
+        "USER": "dbuser",
+        "PASSWORD": "207dbe5d8941016a",
+        "HOST": "165.22.102.180",
+        "PORT": "5432",
     }
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": env("DB_NAME"),
+    #     "USER": env("DB_USER"),
+    #     "PASSWORD": env("DB_PASSWORD"),
+    #     "HOST": env("DB_HOST"),
+    #     "PORT": env("DB_PORT"),
+    # }
 }
 
 

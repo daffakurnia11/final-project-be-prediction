@@ -26,21 +26,22 @@ class Sensor(models.Model):
         return f"Sensor {self.name} ({self.id})"
 
 
-class SensorPrediction(models.Model):
+class Energy(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
 
     name = models.TextField()
-    prediction_date = models.DateField()
-    prediction_power = models.FloatField()
+    date = models.TextField()
+    calculated_energy = models.FloatField(null=True, blank=True)
+    predicted_energy = models.FloatField(null=True, blank=True)
 
     class Meta:
-        db_table = "sensor_predictions"
+        db_table = "energies"
 
     def __str__(self):
-        return f"Prediction for {self.name} on {self.prediction_date}"
+        return f"Calculation for {self.name} on {self.date}"
 
 
 class PowerPrediction(models.Model):
@@ -48,8 +49,8 @@ class PowerPrediction(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
-    sensor_prediction = models.ForeignKey(
-        SensorPrediction,
+    energy = models.ForeignKey(
+        Energy,
         related_name="power_predictions",
         on_delete=models.CASCADE,
     )
@@ -59,4 +60,6 @@ class PowerPrediction(models.Model):
         db_table = "power_predictions"
 
     def __str__(self):
-        return f"Power prediction for {self.sensor_prediction.name} on {self.sensor_prediction.prediction_date}"
+        return (
+            f"Power prediction for {self.energy.name} on {self.energy.prediction_date}"
+        )
